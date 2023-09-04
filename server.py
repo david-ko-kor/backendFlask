@@ -7,7 +7,7 @@ CORS(app)
 @app.route('/')
 @cross_origin()
 def home():
-    return send_from_directory(app.static_folder,'index.html')
+    return "hello,world"
 @app.route('/api')
 @cross_origin()
 def api():
