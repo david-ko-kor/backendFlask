@@ -5,7 +5,6 @@ from flask_cors import CORS,cross_origin
 app = Flask(__name__,static_url_path='',static_folder='../client/build')
 CORS(app)
 @app.route('/')
-@cross_origin()
 def home():
     return app.send_static_file('index.html')
 @app.route('/api')
