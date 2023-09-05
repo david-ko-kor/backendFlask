@@ -2,9 +2,11 @@ from flask import Flask, render_template, redirect, url_for, flash,request
 from flask.helpers import send_from_directory
 from flask_cors import CORS,cross_origin
 
-app = Flask(__name__,static_url_path='',static_folder='../client/build')
+app = Flask(__name__,static_url_path='',static_folder='build')
 CORS(app)
+print(app.static_folder)
 @app.route('/')
+@cross_origin()
 def home():
     return app.send_static_file('index.html')
 @app.route('/api')
